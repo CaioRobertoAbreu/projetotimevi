@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Time {
 
-    //VITORIA não sei se o método toSecs está certo, se o professor quer uma método
+    //VITORIA não sei se o método toSecs está certo, não sei se o professor quer um método
     //específico, nem sei se existe, mas dá no mesmo. Acredito que esses exercícios
     //estão corretos. Eu só nao testei, se der tempo eu posso testar, mas ai ce me avisa. <3
 
@@ -43,18 +43,18 @@ public class Time {
 
     // retorna seu componente de horas
     public int Hour(){
-        return LocalTime.of(hora, minuto, segundo).getHour();
+        return this.hora;
 
     }
 
     // retorna seu componente minutos
     public int Min(){
-       return LocalTime.of(hora, minuto, segundo).getMinute();
+       return this.minuto;
     }
 
     // retorna seu componente segundos
     public int Sec(){
-        return LocalTime.of(hora, minuto,segundo).getSecond();
+        return this.segundo;
     }
 
     // soma com horas, resulta Time
@@ -68,9 +68,9 @@ public class Time {
     // subtrai horas, resulta Time
     public Time Sub(int hrs){
         LocalTime horas = LocalTime.of(hora, minuto, segundo);
-        int horasAdicionadas  = horas.minusHours(hrs).getHour();
+        int horasSubtraidas  = horas.minusHours(hrs).getHour();
 
-        return new Time(horasAdicionadas, minuto, segundo);
+        return new Time(horasSubtraidas, minuto, segundo);
     }
 
     // subtrai Time, resulta horas
